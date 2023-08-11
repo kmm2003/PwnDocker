@@ -10,6 +10,8 @@ Various tools are installed in each environment to help with pwnable analysis.
 
 ## Build
 
+- Build your own version of docker environment.
+
 ```python
 # example of building ubuntu18.04
 
@@ -19,8 +21,6 @@ cd ubuntu18.04
 
 docker build --tag ubuntu:18.04 .
 ```
-
-- Build your own version of docker environment.
 
 ## Create container
 
@@ -46,19 +46,19 @@ CONTAINER ID   IMAGE          COMMAND   CREATED        STATUS                   
 b67eae440493   f3035e24529b   "bash"    22 hours ago   Exited (139) 15 hours ago             kind_elion
 ```
 
+- Find the name of the container with the command "docker ps -a" and run the start → attach command.
+
 ```python
 docker start kind_elion
 
 docker attach kind_elion
 ```
 
-- Find the name of the container with the command "docker ps -a" and run the start → attach command.
-
 ## **Transfer files from host to container**
+
+- Move the self file to the ubuntu environment as above and start analysis!
 
 ```python
 # docker cp [filename] [container_name]:[container_path]
 ex) docker cp ./prob kind_elion:/root
 ```
-
-- Move the self file to the ubuntu environment as above and start analysis!
