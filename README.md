@@ -2,8 +2,6 @@
 
 ## About
 
----
-
 ubuntu environment docker file for ctf player with pwnable
 
 Various tools are installed in each environment to help with pwnable analysis.
@@ -11,8 +9,6 @@ Various tools are installed in each environment to help with pwnable analysis.
 (etc. GDB, pyhon, pwntools, tmux, ropgadget, ruby, one_gadget, seccomp-tools)
 
 ## Build
-
----
 
 ```python
 # example of building ubuntu18.04
@@ -28,8 +24,6 @@ docker build --tag ubuntu:18.04 .
 
 ## Create container
 
----
-
 - If you are using a build environment for the first time, create containers and run the shell in the same order as above.
 
 ```python
@@ -43,8 +37,6 @@ docker run -it --network=host f3035e24529b bash
 ```
 
 ## Execute shell
-
----
 
 - If it's not your first time using it
 
@@ -63,8 +55,6 @@ docker attach kind_elion
 - Find the name of the container with the command "docker ps -a" and run the start → attach command.
 
 ## **Transfer files from host to container**
-
----
 
 ```python
 # docker cp [filename] [container_name]:[container_path]
