@@ -32,8 +32,8 @@ RUN pip3 install pwntools #only using python3
 RUN pip3 install capstone ropper
 RUN pip3 install ropgadget
 
-RUN git clone https://github.com/hugsy/gef ./gef
-RUN echo source ~/gef/gef.py >> ~/.gdbinit
+RUN git clone https://github.com/longld/peda.git ~/peda
+RUN echo "source ~/peda/peda.py" >> ~/.gdbinit
 
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
