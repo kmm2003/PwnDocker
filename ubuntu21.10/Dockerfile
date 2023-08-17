@@ -13,7 +13,7 @@ RUN sed -i -r 's/([a-z]{2}.)?archive.ubuntu.com/old-releases.ubuntu.com/g' /etc/
 RUN sed -i -r 's/security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
 
 RUN apt update && apt install -y netcat
-RUN apt install vim git gcc ssh curl wget gdb sudo zsh python3 python3-pip libffi-dev build-essential libssl-dev libc6-i386 libc6-dbg gcc-multilib make -y
+RUN apt install vim git gcc ssh curl wget gdb sudo zsh tmux python3 python3-pip libffi-dev build-essential libssl-dev libc6-i386 libc6-dbg gcc-multilib make -y
 
 RUN dpkg --add-architecture i386
 RUN apt update
