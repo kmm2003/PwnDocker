@@ -37,4 +37,10 @@ pwndocker 18.04 # ex) pwndocker [version]
 ex) docker cp ./prob 18.04:/root
 ```
 
+## **Transfer files from container to host**
+```python
+# docker cp [container_name]:[container_filepath] [filename]
+ex) docker cp 18.04:/root/targetfile ./targetfile
+```
+
 - Move the self file to the ubuntu environment as above and start analysis!
