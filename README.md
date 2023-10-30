@@ -2,8 +2,6 @@
 
 ## About
 
----
-
 ubuntu environment docker file for ctf player with pwnable
 
 Various tools are installed in each environment to help with pwnable analysis.
