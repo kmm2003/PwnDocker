@@ -26,8 +26,9 @@ RUN pip3 install pwntools
 RUN pip3 install ropgadget
 RUN apt install libcapstone-dev -y
 
-RUN git clone https://github.com/longld/peda.git ~/peda
-RUN echo "source ~/peda/peda.py" >> ~/.gdbinit
+RUN apt install file -y
+RUN git clone https://github.com/hugsy/gef ./gef
+RUN echo source ~/gef/gef.py >> ~/.gdbinit
 
 RUN apt install ruby-full -y
 RUN gem install one_gadget seccomp-tools
