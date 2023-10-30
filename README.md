@@ -34,7 +34,7 @@ pwndocker 18.04 # ex) pwndocker [version]
 ## **Transfer files from host to container**
 ```python
 # docker cp [filename] [container_name]:[container_path]
-ex) docker cp ./prob kind_elion:/root
+ex) docker cp ./prob 18.04:/root
 ```
 
 - Move the self file to the ubuntu environment as above and start analysis!
