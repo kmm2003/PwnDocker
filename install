@@ -1,0 +1,39 @@
+#!/bin/bash
+echo "[+] Install ubuntu:$1 PwnDocker Image"
+
+case "$1" in
+  "16.04") docker build --tag ubuntu:16.04 ./ubuntu16.04/
+  ;;
+  "18.04") docker build --tag ubuntu:18.04 ./ubuntu18.04/
+  ;;
+  "20.04") docker build --tag ubuntu:20.04 ./ubuntu20.04/
+  ;;
+  "21.10") docker build --tag ubuntu:21.10 ./ubuntu21.10/
+  ;;
+  "22.04") docker build --tag ubuntu:22.04 ./ubuntu22.04/
+  ;;
+  *) echo "[!] Unsupported version: $1"
+  ;;
+esac
+
+if [ ! -f /bin/pwndocker ]; then
+  echo "[+] Copying pwndocker to /bin"
+  chmod 777 ./pwndocker && cp ./pwndocker /bin/
+fi
+
+echo "[+] Execute Shell ubuntu:$1"
+
+case "$1" in
+  "16.04") docker run -it --cap-add SYS_PTRACE --name 16.04 ubuntu:16.04 /usr/bin/zsh
+  ;;
+  "18.04") docker run -it --cap-add SYS_PTRACE --name 18.04 ubuntu:18.04 /usr/bin/zsh
+  ;;
+  "20.04") docker run -it --cap-add SYS_PTRACE --name 20.04 ubuntu:20.04 /usr/bin/zsh
+  ;;
+  "21.10") docker run -it --cap-add SYS_PTRACE --name 21.10 ubuntu:21.10 /usr/bin/zsh
+  ;;
+  "22.04") docker run -it --cap-add SYS_PTRACE --name 22.04 ubuntu:22.04 /usr/bin/zsh
+  ;;
+  *) echo "[!] Unsupported version: $1"
+  ;;
+esac

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "[+] Running $1 version pwndocker..."
+echo "[+] Booting.. ubuntu $1 version"
+
+case "$1" in
+	"16.04") docker start 16.04 && docker attach 16.04
+	;;
+	"18.04") docker start 18.04 && docker attach 18.04
+	;;
+	"20.04") docker start 20.04 && docker attach 20.04
+	;;
+  "21.10") docker start 21.10 && docker attach 21.10
+	;;
+	"22.04") docker start 22.04 && docker attach 22.04
+	;;
+	*) echo "[!] Unsupported version: $1"
+	;;
+esac

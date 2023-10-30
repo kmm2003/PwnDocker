@@ -25,8 +25,14 @@ RUN apt install libcapstone-dev -y
 RUN git clone https://github.com/hugsy/gef ./gef
 RUN echo source ~/gef/gef.py >> ~/.gdbinit
 
-RUN apt install ruby-full -y
-RUN gem install one_gadget seccomp-tools
+RUN apt-get install software-properties-common -y
+RUN apt-add-repository ppa:brightbox/ruby-ng
+RUN apt-get update
+RUN apt-get install ruby2.4 -y
+RUN apt-get install ruby-switch -y
+RUN ruby-switch --set ruby2.4
+RUN apt-get install gem -y
+RUN gem install one_gadget
 
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 RUN mkdir -p "$HOME/.zsh"
