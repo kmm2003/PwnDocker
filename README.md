@@ -14,6 +14,8 @@ Various tools are installed in each environment to help with pwnable analysis.
 
 git clone https://github.com/kmm2003/PwnDocker.git
 
+cd ./PwnDocker
+
 ./install 18.04 # ex) ./install [version]
 
 ```
