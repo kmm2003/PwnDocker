@@ -21,6 +21,7 @@ cd ./PwnDocker
 ```
 
 - Install is easy to install using install.
+- Please use the root account for the build process!
 
 
 ## Used
