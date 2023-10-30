@@ -20,7 +20,7 @@ cd ./PwnDocker
 
 ```
 
-- Install is easy to install using install.
+- Easy to install using "install".
 - Please use the root account for the build process!
 
 
@@ -29,7 +29,7 @@ cd ./PwnDocker
 pwndocker 18.04 # ex) pwndocker [version]
 ```
 
-- Run the built container with the pwndocker command.
+- Run the built container with the "pwndocker" command.
 
 
 ## **Transfer files from host to container**
