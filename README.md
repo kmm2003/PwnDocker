@@ -16,12 +16,12 @@ git clone https://github.com/kmm2003/PwnDocker.git
 
 cd ./PwnDocker
 
-./install 18.04 # ex) ./install [version]
+./install 18.04 # ex) ./build [version]
 
 ```
 
-- Easy to install using "install".
-- Please use the root account for the build process!
+- Easy to build using "build".
+- warning!) Please use the root account for the build process!
 
 
 ## Used
