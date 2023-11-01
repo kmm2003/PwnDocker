@@ -16,7 +16,7 @@ git clone https://github.com/kmm2003/PwnDocker.git
 
 cd ./PwnDocker
 
-./install 18.04 # ex) ./build [version]
+./build 18.04 # ex) ./build [version]
 
 ```
 
