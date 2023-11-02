@@ -1,19 +1,17 @@
 #!/bin/bash
 
-export DEBIAN_FRONTEND=noninteractive
 export TZ=Asia/Seoul
 export PYTHONIOENCODING=UTF-8
 export LC_CTYPE=C.UTF-8
 
-cd /root
-
 apt update
-apt upgrade -y
-apt-get update
+apt install -y netcat
+apt update
+apt install -y vim git gcc ssh curl wget gdb sudo zsh tmux python3 python3-dev python3-pip libffi-dev build-essential libssl-dev libc6-i386 libc6-dbg gcc-multilib make
 
-apt install python3 python3-dev python3-pip -y
-apt install git curl wget vim zsh gdb make -y
-apt install libffi-dev build-essential libssl-dev libc6-dev libc6-dbg gcc make tmux -y
+dpkg --add-architecture i386
+apt update
+apt install -y libc6:i386
 
 pip3 install unicorn keystone-engine pip==20.3.4 pwntools capstone ropper ropgadget
 
