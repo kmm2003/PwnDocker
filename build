@@ -2,15 +2,17 @@
 echo "[+] Install ubuntu:$1 PwnDocker Image"
 
 case "$1" in
-  "16.04") docker build --tag ubuntu:16.04 ./ubuntu16.04/
+  "16.04") docker build --no-cache --tag ubuntu:16.04 ./ubuntu16.04/
   ;;
-  "18.04") docker build --tag ubuntu:18.04 ./ubuntu18.04/
+  "18.04") docker build --no-cache --tag ubuntu:18.04 ./ubuntu18.04/
   ;;
-  "20.04") docker build --tag ubuntu:20.04 ./ubuntu20.04/
+  "20.04") docker build --no-cache --tag ubuntu:20.04 ./ubuntu20.04/
   ;;
-  "21.10") docker build --tag ubuntu:21.10 ./ubuntu21.10/
+  "21.10") docker build --no-cache --tag ubuntu:21.10 ./ubuntu21.10/
   ;;
-  "22.04") docker build --tag ubuntu:22.04 ./ubuntu22.04/
+  "22.04") docker build --no-cache --tag ubuntu:22.04 ./ubuntu22.04/
+  ;;
+  "arm64v8") docker build --no-cache --platform linux/arm64v8 -t arm64v8:v1 ./arm64v8/
   ;;
   *) echo "[!] Unsupported version: $1"
   ;;
@@ -33,6 +35,8 @@ case "$1" in
   "21.10") docker run -it --cap-add SYS_PTRACE --name 21.10 ubuntu:21.10 /usr/bin/zsh
   ;;
   "22.04") docker run -it --cap-add SYS_PTRACE --name 22.04 ubuntu:22.04 /usr/bin/zsh
+  ;;
+  "arm64v8") docker run -it --platform linux/arm64v8 --cap-add SYS_PTRACE --name arm64v8 arm64v8:v1 /usr/bin/zsh
   ;;
   *) echo "[!] Unsupported version: $1"
   ;;
