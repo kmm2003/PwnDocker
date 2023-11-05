@@ -27,8 +27,8 @@ RUN apt-get install -qy strace ltrace gdb build-essential python3 python3-pip li
 #RUN python3 -m pip install ropper 
 #RUN python3 -m pip install pwntools
 
-#RUN git clone https://github.com/hugsy/gef ./gef
-#RUN echo source ~/gef/gef.py >> ~/.gdbinit
+RUN git clone https://github.com/hugsy/gef ./gef
+RUN echo source ~/gef/gef.py >> ~/.gdbinit
 
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 RUN mkdir -p "$HOME/.zsh"

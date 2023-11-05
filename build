@@ -14,6 +14,8 @@ case "$1" in
   ;;
   "arm64v8") docker build --no-cache --platform linux/arm64v8 -t arm64:v8 ./arm64v8/
   ;;
+  "arm32v7") docker build --no-cache --platform linux/arm32v7 -t arm32:v7 ./arm32v7/
+  ;;
   *) echo "[!] Unsupported version: $1"
   ;;
 esac
@@ -37,6 +39,8 @@ case "$1" in
   "22.04") docker run -it --cap-add SYS_PTRACE --name 22.04 ubuntu:22.04 /usr/bin/zsh
   ;;
   "arm64v8") docker run -it --platform linux/arm64v8 --cap-add SYS_PTRACE --name arm64v8 arm64:v8 /usr/bin/zsh
+  ;;
+  "arm32v7") docker run -it --platform linux/arm32v7 --cap-add SYS_PTRACE --name arm32v7 arm32:v7 /usr/bin/zsh
   ;;
   *) echo "[!] Unsupported version: $1"
   ;;
