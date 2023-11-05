@@ -1,4 +1,4 @@
-FROM arm32v7/ubuntu:20.04
+FROM arm32v7/ubuntu:22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -43,6 +43,6 @@ RUN git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosu
 RUN echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 RUN echo "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=111'" >> ~/.zshrc
 
-RUN ln -s /lib/ld-linux-arm.so.3 /lib/ld-linux.so.3
+RUN ln -s /lib/ld-linux-armhf.so.3 /lib/ld-linux.so.3
 
 WORKDIR /root
