@@ -15,7 +15,7 @@ RUN dpkg --add-architecture armhf
 RUN apt-get update
 RUN apt-get upgrade
 RUN apt install vim git gcc ssh curl wget zsh tmux -y
-RUN apt-get install -qy strace ltrace gdb build-essential python3 python3-pip libssl-dev libffi-dev cargo pkg-config cmake
+RUN apt-get install -qy strace ltrace gdb build-essential python3 python3-pip libssl-dev libffi-dev cargo pkg-config cmake file
 #RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 #RUN python3 -m pip install --upgrade pip setuptools
