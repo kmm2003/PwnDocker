@@ -34,8 +34,3 @@ RUN echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 RUN echo "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=111'" >> ~/.zshrc
 
 WORKDIR /root
-
-#RUN ln -s /lib/ld-linux-armhf.so.3 /lib/ld-linux.so.3
-
-#docker build --no-cache --platform linux/arm64v8 -t arm64v8:v1 ./arm64v8/
-#docker run -it --platform linux/arm64v8 --cap-add SYS_PTRACE --name arm64v8 arm64v8:v1 bash
