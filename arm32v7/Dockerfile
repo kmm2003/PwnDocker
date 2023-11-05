@@ -1,4 +1,4 @@
-FROM arm32v7/ubuntu:18.04
+FROM arm32v7/ubuntu:20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -24,7 +24,8 @@ RUN apt-get install -qy strace ltrace gdb build-essential python3 python3-pip li
 #RUN python3 -m pip install cryptography==2.1.1
 #RUN pip3 install "git+https://github.com/unicorn-engine/unicorn@e76b2db434382f59661471faae02b022a3ee5a30#subdirectory=bindings/python/"
 
-#RUN python3 -m pip install ropper 
+RUN python3 -m pip install ropper 
+#RUN python3 -m pip install setuptools_rust
 #RUN python3 -m pip install pwntools
 
 RUN git clone https://github.com/hugsy/gef ./gef
