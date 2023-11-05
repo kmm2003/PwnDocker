@@ -16,7 +16,7 @@ RUN apt-get update
 RUN apt-get upgrade
 RUN apt install vim git gcc ssh curl wget zsh tmux -y
 RUN apt-get install -qy strace ltrace gdb build-essential python3 python3-pip
-RUN python3 -m pip install ropper pwntools
+RUN python3 -m pip install ropper pwntools ropgadget
 
 RUN git clone https://github.com/hugsy/gef ./gef
 RUN echo source ~/gef/gef.py >> ~/.gdbinit
