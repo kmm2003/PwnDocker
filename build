@@ -20,13 +20,9 @@ case "$1" in
   ;;
 esac
 
-if [ ! -f /bin/pwndocker ]; then
-  echo "[+] Copying pwndocker to /bin"
-  chmod 777 ./pwndocker && cp ./pwndocker /bin/
-fi
+chmod 777 ./pwndocker && cp ./pwndocker /bin/
 
 echo "[+] Execute Shell ubuntu:$1"
-
 case "$1" in
   "16.04") docker run -it --cap-add SYS_PTRACE --name 16.04 ubuntu:16.04 /usr/bin/zsh
   ;;
