@@ -23,7 +23,6 @@ RUN apt install ruby-full -y
 RUN apt install ruby-dev -y
 
 RUN gem install one_gadget
-RUN gem install seccomp-tools
 
 RUN pip3 install unicorn
 RUN pip3 install keystone-engine
