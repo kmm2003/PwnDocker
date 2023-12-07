@@ -7,7 +7,7 @@ Various tools are installed in each environment to help with pwnable analysis.
 
 (etc. GDB, pyhon, pwntools, tmux, ropgadget, ruby, one_gadget, seccomp-tools)
 
-warning!) arm is test_version.
+warning!) arm is test version.
 
 ## Build
 ```python
