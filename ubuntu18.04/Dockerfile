@@ -22,7 +22,7 @@ RUN pip3 install pwntools
 RUN pip3 install ropgadget
 RUN apt install libcapstone-dev -y
 
-RUN git clone https://github.com/hugsy/gef ./gef
+RUN git clone -b 2022.01 https://github.com/hugsy/gef.git ./gef
 RUN echo source ~/gef/gef.py >> ~/.gdbinit
 
 RUN apt-get install software-properties-common -y
