@@ -31,16 +31,16 @@ pwndocker 18.04 # ex) pwndocker [version]
 - Run the built container with the "pwndocker" command.
 
 
-## **Transfer files from host to container**
+## **Copy files from host to container**
 ```python
-# docker cp [filename] [container_name]:[container_path]
-ex) docker cp ./prob 18.04:/root
+# pwnpull [version] [host_file] [container_path]
+ex) pwnpush 18.04 ./prob /root
 ```
 
-## **Transfer files from container to host**
+## **Copy files from container to host**
 ```python
-# docker cp [container_name]:[container_filepath] [filename]
-ex) docker cp 18.04:/root/targetfile ./targetfile
+# pwnpull [version] [container_file] [host_path]
+ex) pwnpull 18.04 /root/prob .
 ```
 
 - Move the self file to the ubuntu environment as above and start analysis!
