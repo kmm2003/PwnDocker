@@ -23,7 +23,7 @@ cd ./PwnDocker
 - warning!) Please use the root account for the build process!
 
 
-## Used
+## Start Shell
 ```python
 pwndocker 18.04 # ex) pwndocker [version]
 ```
