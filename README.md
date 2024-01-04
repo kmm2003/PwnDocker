@@ -33,7 +33,7 @@ pwndocker 18.04 # ex) pwndocker [version]
 
 ## **Copy files from host to container**
 ```python
-# pwnpull [version] [host_file] [container_path]
+# pwnpush [version] [host_file] [container_path]
 ex) pwnpush 18.04 ./prob /root
 ```
 
