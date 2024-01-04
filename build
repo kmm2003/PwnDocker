@@ -16,7 +16,9 @@ case "$1" in
   ;;
 esac
 
-chmod 777 ./pwndocker && cp ./pwndocker /bin/
+chmod 755 ./pwndocker && cp ./pwndocker /bin/
+chmod 755 ./pwnpush && cp ./pwnpush /bin/
+chmod 755 ./pwnpull && cp ./pwnpull /bin/
 
 echo "[+] Execute Shell ubuntu:$1"
 case "$1" in

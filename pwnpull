@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ "$#" -ne 3 ]; then
+    echo "used: <version> <container file> <host path> "
+    exit 1
+fi
+
+docker cp $1:$2 $3
+
+if [ $? -eq 0 ]; then
+    echo "[+] Success Pull from $1 version pwndocker"
+else
+    echo "[-] Error Pull. Please check filename!"
+fi

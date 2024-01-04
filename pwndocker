@@ -14,10 +14,6 @@ case "$1" in
 	;;
 	"22.04") docker start 22.04 && docker attach 22.04
 	;;
-  "arm64v8") docker start arm64v8 && docker attach arm64v8
-	;;
-  "arm32v7") docker start arm32v7 && docker attach arm32v7
-	;;
 	*) echo "[!] Unsupported version: $1"
 	;;
 esac
