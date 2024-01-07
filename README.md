@@ -43,4 +43,4 @@ ex) pwnpush 18.04 ./prob /root
 ex) pwnpull 18.04 /root/prob .
 ```
 
-- Move the self file to the ubuntu environment as above and start analysis!
+- Move file to the ubuntu environment as above and start analysis!
