@@ -36,11 +36,10 @@ pwndocker 18.04 # ex) pwndocker [version]
 # pwnpush [version] [host_file] [container_path]
 ex) pwnpush 18.04 ./prob /root
 ```
+- Move file to the ubuntu environment as above and start analysis!
 
 ## **Copy files from container to host**
 ```python
 # pwnpull [version] [container_file] [host_path]
 ex) pwnpull 18.04 /root/prob .
 ```
-
-- Move file to the ubuntu environment as above and start analysis!
