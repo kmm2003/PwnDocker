@@ -14,8 +14,8 @@ RUN apt-get update && apt-get install -y netcat
 RUN apt-get dist-upgrade
 
 RUN apt install python3 python3-dev python3-pip -y
-RUN apt install git curl wget vim zsh gdb make -y
-RUN apt install libffi-dev build-essential libssl-dev libc6-i386 libc6-dbg gcc-multilib make tmux -y
+RUN apt install git curl wget vim zsh gdb make tmux -y
+RUN apt install libffi-dev build-essential libssl-dev libc6-i386 libc6-dbg gcc-multilib -y
 
 RUN apt-get install libcapstone-dev -y
 RUN apt-get install libc6:i386 -y
