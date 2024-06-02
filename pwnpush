@@ -8,7 +8,7 @@ fi
 docker cp $2 $1:$3
 
 if [ $? -eq 0 ]; then
-    echo "[+] Success Push to $1 version pwndocker"
+    echo "[+] Success Push to ubuntu:$1 version pwndocker"
 else
     echo "[-] Error Push. Please check filename!"
 fi

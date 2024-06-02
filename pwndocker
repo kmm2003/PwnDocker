@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "[*] Running $1 version pwndocker..."
-echo "[*] Booting.. ubuntu $1 version"
+echo "[*] Running ubuntu:$1 version pwndocker..."
+echo "[*] Booting.. ubuntu:$1 version"
 
 docker start $1 && docker attach $1
 if [ $? -ne 0 ]; then

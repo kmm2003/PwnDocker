@@ -8,7 +8,7 @@ fi
 docker cp $1:$2 $3
 
 if [ $? -eq 0 ]; then
-    echo "[+] Success Pull from $1 version pwndocker"
+    echo "[+] Success Pull from ubuntu:$1 version pwndocker"
 else
     echo "[-] Error Pull. Please check filename!"
 fi
