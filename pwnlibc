@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ "$#" -ne 2 ]; then
+    echo "Usage: <Image Name:Tag> <Target Binary Path>"
+    exit 1
+fi
+
+IMAGE_NAME_TAG=$1
+IMAGE_NAME="${IMAGE_NAME_TAG%:*}"
+TARGET_BINARY_PATH=$2
+TARGET_DIR=$(dirname "$TARGET_BINARY_PATH")
+
+docker run -it --network=host --name $IMAGE_NAME "$IMAGE_NAME_TAG" /bin/bash -c "ldd $TARGET_BINARY_PATH | grep libc.so.6 | awk '{print \$3}' | xargs -I '{}' cp '{}' $TARGET_DIR"
+
+docker cp $IMAGE_NAME:$TARGET_DIR/libc.so.6 .
+
+docker rm $IMAGE_NAME
+
+if [ $? -eq 0 ]; then
+    echo "[+] Success Pull Glibc file."
+else
+    echo "[-] Error Pull."
+fi
