@@ -23,21 +23,20 @@ RUN pip3 install ropgadget
 RUN apt install libcapstone-dev -y
 
 RUN git clone -b 2022.01 https://github.com/hugsy/gef.git ./gef
-RUN echo source ~/gef/gef.py >> ~/.gdbinit
+RUN echo "source ~/gef/gef.py" >> ~/.gdbinit
 
-RUN apt-get install software-properties-common -y
+# Install Ruby from Brightbox PPA to ensure correct version
+RUN apt-get install -y software-properties-common
 RUN apt-add-repository ppa:brightbox/ruby-ng
 RUN apt-get update
-RUN apt-get install ruby2.4 -y
-RUN apt-get install ruby-switch -y
-RUN ruby-switch --set ruby2.4
-RUN apt-get install gem -y
+RUN apt-get install ruby2.7 ruby2.7-dev -y
+
 RUN gem install one_gadget
 
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 RUN mkdir -p "$HOME/.zsh"
 RUN git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
-RUN echo "fpath+=("$HOME/.zsh/pure")\nautoload -U promptinit; promptinit\nprompt pure" >> ~/.zshrc
+RUN echo "fpath+=('$HOME/.zsh/pure')\nautoload -U promptinit; promptinit\nprompt pure" >> ~/.zshrc
 
 RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 RUN echo "source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
