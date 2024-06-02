@@ -1,11 +1,11 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 ENV TZ Asia/Seoul
 ENV PYTHONIOENCODING UTF-8
 ENV LC_CTYPE C.UTF-8
-ARG DEBIAN_FRONTEND=noninteractive #no interactive
+ARG DEBIAN_FRONTEND=noninteractive
 
-WORKDIR root
+WORKDIR /root
 
 RUN dpkg --add-architecture i386
 RUN apt update && apt upgrade -y
@@ -26,22 +26,22 @@ RUN gem install one_gadget
 RUN pip3 install unicorn
 RUN pip3 install keystone-engine
 RUN pip3 install pathlib2
-RUN pip3 install pwntools #only using python3
+RUN pip3 install pwntools
 RUN pip3 install capstone ropper
 RUN pip3 install ropgadget
 
 RUN apt install file -y
-RUN git clone https://github.com/hugsy/gef ./gef
-RUN echo source ~/gef/gef.py >> ~/.gdbinit
+RUN git clone https://github.com/hugsy/gef /root/gef
+RUN echo "source /root/gef/gef.py" >> ~/.gdbinit
 
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
 RUN mkdir -p "$HOME/.zsh"
 RUN git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
-RUN echo "fpath+=("$HOME/.zsh/pure")\nautoload -U promptinit; promptinit\nprompt pure" >> ~/.zshrc
+RUN echo "fpath+=('$HOME/.zsh/pure')\nautoload -U promptinit; promptinit\nprompt pure" >> ~/.zshrc
 
-RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-RUN echo "source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /root/zsh-syntax-highlighting
+RUN echo "source /root/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
 
 RUN git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 RUN echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
