@@ -2,6 +2,7 @@
 echo "[+] Install ubuntu:$1 PwnDocker Image"
 
 docker build --no-cache --tag ubuntu:$1 ./ubuntu$1/
+
 if [ $? -ne 0 ]; then
     echo "[!] Unsupported version: $1"
     exit 1
