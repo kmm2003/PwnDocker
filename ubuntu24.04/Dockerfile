@@ -39,17 +39,4 @@ RUN apt install file -y
 RUN git clone https://github.com/hugsy/gef /root/gef
 RUN echo "source /root/gef/gef.py" >> ~/.gdbinit
 
-RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
-
-RUN mkdir -p "$HOME/.zsh"
-RUN git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
-RUN echo "fpath+=('$HOME/.zsh/pure')\nautoload -U promptinit; promptinit\nprompt pure" >> ~/.zshrc
-
-RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /root/zsh-syntax-highlighting
-RUN echo "source /root/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
-
-RUN git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-RUN echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
-RUN echo "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=111'" >> ~/.zshrc
-
 RUN apt install net-tools openssh-server -y

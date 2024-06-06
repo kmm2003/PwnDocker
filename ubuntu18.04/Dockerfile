@@ -32,15 +32,3 @@ RUN apt-get update
 RUN apt-get install ruby2.7 ruby2.7-dev -y
 
 RUN gem install one_gadget
-
-RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
-RUN mkdir -p "$HOME/.zsh"
-RUN git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
-RUN echo "fpath+=('$HOME/.zsh/pure')\nautoload -U promptinit; promptinit\nprompt pure" >> ~/.zshrc
-
-RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-RUN echo "source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
-
-RUN git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-RUN echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
-RUN echo "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=111'" >> ~/.zshrc
