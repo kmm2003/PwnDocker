@@ -11,6 +11,7 @@ fi
 chmod 755 ./pwndocker && cp ./pwndocker /bin/
 chmod 755 ./pwnpush && cp ./pwnpush /bin/
 chmod 755 ./pwnpull && cp ./pwnpull /bin/
+chmod 755 ./pwnlibc && cp ./pwnlibc /bin/
 
 docker run -it --cap-add SYS_PTRACE --name $1 ubuntu:$1 /bin/bash
 if [ $? -ne 0 ]; then
