@@ -31,4 +31,4 @@ RUN apt-add-repository ppa:brightbox/ruby-ng
 RUN apt-get update
 RUN apt-get install ruby2.7 ruby2.7-dev -y
 
-RUN gem install one_gadget
+RUN gem install one_gadget -v 1.6.2
